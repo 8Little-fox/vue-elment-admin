@@ -1,0 +1,28 @@
+// sidebar
+$menuText: #ffffff; //左侧导航栏文字字体
+$menuActiveText: #409EFF; // 当前 选中文字
+$subMenuActiveText: #409EFF; // 当前选中的二级 一级的文字颜色 https://github.com/ElemeFE/element/issues/12951
+
+$menuBg:  transparent; // 导航栏主体背景颜色
+$menuHover:  rgba($color: #000000, $alpha: 0.1); // 鼠标移动项的背景颜色 #236ca1
+
+$subMenuBg: transparent; // 二级分类的背景颜色
+$subMenuHover: rgba($color: #000000, $alpha: 0.1); // 鼠标移动项的背景颜色
+
+$iconSize: 16px; // 图标字体
+
+$sideBarWidth: 260px;
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  subMenuActiveText: $subMenuActiveText;
+  menuBg: $menuBg;
+  menuHover: $menuHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  sideBarWidth: $sideBarWidth;
+  iconSize: $iconSize;
+}

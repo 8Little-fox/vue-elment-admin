@@ -1,0 +1,42 @@
+/* 主容器样式 */
+.box {
+  padding: 30px;
+  width: 100%;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(144, 147, 153, .3);
+  border-radius: 10px;
+}
+
+/* 分页组件样式 */
+.pagination {
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* 表格样式 */
+.table {
+  width: 100%;
+  font-size: 14px;
+}
+.el-image-viewer__close{
+  top: 0;
+  left: 0;
+  font-size: 9999px;
+  opacity: 0;
+}

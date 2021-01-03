@@ -1,0 +1,49 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// 正方形
+@mixin rect($size) {
+    width: $size;
+    height: $size;
+}
+
+// 超出行数 末尾三个点  传入数字即可
+@mixin textHidden($num) {
+	word-break: break-all;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $num;
+	overflow: hidden;
+}
+
+// flex 水平与垂直居中
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+// margin-top
+@mixin m-t($distance) {
+    margin-top: $distance;
+}
+// margin-left
+@mixin l-t($distance) {
+    margin-left: $distance;
+}
+// margin-right
+@mixin m-r($distance) {
+    margin-right: $distance;
+}
+// margin-bottom
+@mixin m-b($distance) {
+    margin-bottom: $distance;
+}
+
+
+

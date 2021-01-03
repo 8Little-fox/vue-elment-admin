@@ -1,0 +1,18 @@
+/* 自定义icon */
+.el-icon-my-loading {
+  background: url('~@img/loading/loading-four.gif') center no-repeat;
+  background-size: cover;
+}
+
+.el-icon-my-loading:before {
+  content: "\e611";
+  visibility: hidden;
+}
+
+.el-icon-my-loading {
+  font-size: 200px;
+}
+
+.el-loading-spinner{
+  top: 24%;
+}

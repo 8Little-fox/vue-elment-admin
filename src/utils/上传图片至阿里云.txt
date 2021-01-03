@@ -1,0 +1,68 @@
+import {aliAvatarUrl} from '../../my-config'
+import {timeStampImg} from '../utils/comm'
+import OSS from 'ali-oss'
+import {Message} from 'element-ui'
+
+const timeStampImage = timeStampImg()
+
+export default function (file) {
+    // 判断扩展名
+    const tmpcnt = file.file.name.lastIndexOf('.')
+    const exname = file.file.name.substring(tmpcnt + 1)
+    const names = ['jpg', 'jpeg', 'png']
+    if (names.indexOf(exname) < 0) {
+        Message({type: 'error', message: '不支持的格式!'})
+        return
+    }
+    if (file.file.size > 1024 * 1024 * 10) {
+        Message({type: 'error', message: '图片大小最大10M'})
+        return
+    }
+
+    async function multipartUpload() {
+        const fileName = '自定义名称/' + timeStampImage + '_' + file.file.name
+        // client 是第一步中的 client
+        const clients = client()
+        return clients.multipartUpload(fileName, file.file).then(result => {
+            return `${aliAvatarUrl}/${result.name}`
+            // 下面是如果对返回结果再进行处理，根据项目需要
+        }).catch(err => {
+            console.log('err:', err)
+        })
+    }
+
+    return multipartUpload()
+}
+
+function client() {
+    // 后端提供数据
+    return new OSS({
+        region: 'oss-cn-beijing',
+        accessKeyId: 'accessKeyId',
+        accessKeySecret: 'accessKeySecret',
+        bucket: 'xxx-xxx', // 桶
+        endpoint: 'oss-cn-beijing.aliyuncs.com',
+        secure: true
+    })
+}
+
+
+
+ aliAvatarUrl: 'https://xxx.oss-cn-beijing.aliyuncs.com/', // 阿里云图片存储的地方
+
+
+/**
+ * @author: @xusy
+ * @date: 2020/10/24 16:26
+ * @creed: 利用时间戳+随机数弄成图片的名称（用来防止重复）
+ * @remark: 相当于一毫秒的时候，可以有16的6次方的人数生成图片路径
+ */
+export const timeStampImg = () =>{
+    // 生成当前的时间戳
+    let timestamp = new Date().getTime();
+    //一个十六进制的值的数组
+    let tempJ =  Math.random().toString(16).substr(-6);
+
+    return timestamp+tempJ
+}
+
