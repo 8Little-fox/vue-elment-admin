@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-01-04 09:52:23
+ * @LastEditTime: 2021-01-04 17:39:45
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue-elment-admin\src\views\dashboard\components\ChartRow.vue
+-->
 <template>
   <el-row :gutter="32">
     <el-col
@@ -32,7 +40,9 @@
 
 <script>
 import RaddarChart from '@/components/Chart/RaddarChart'
-import PieChart from '@/components/Chart/PieChart'
+import PieChart from '@/components/Chart/PieChart1'
+
+// import PieChart from '@/components/Chart/PieChart'
 import BarChart from '@/components/Chart/BarChart'
 
 export default {

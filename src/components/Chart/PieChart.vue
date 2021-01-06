@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-01-04 09:52:23
+ * @LastEditTime: 2021-01-05 15:18:59
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \vue-elment-admin\src\components\Chart\PieChart.vue
+-->
 <template>
   <div
     :class="className"
@@ -25,7 +33,7 @@ export default {
     },
     height: {
       type: String,
-      default: '300px'
+      default: '500px'
     }
   },
   data() {
